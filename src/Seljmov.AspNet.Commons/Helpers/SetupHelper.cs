@@ -34,9 +34,9 @@ public static class SetupHelper
         {
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("AllowAll", builder =>
+                options.AddPolicy("AllowAll", corsPolicyBuilder =>
                 {
-                    builder.AllowAnyMethod()
+                    corsPolicyBuilder.AllowAnyMethod()
                         .AllowAnyHeader()
                         .AllowCredentials()
                         .SetIsOriginAllowed(_ => true);
@@ -89,7 +89,7 @@ public static class SetupHelper
                 };
             });
 
-        if (buildOptions.AuthenticationPolicies.Any())
+        if (buildOptions.AuthenticationPolicies.Count != 0)
         {
             builder.Services.AddAuthorization(options =>
             {
@@ -183,6 +183,8 @@ public static class SetupHelper
 
         app.UseRouting();
 
+        app.UseAntiforgery();
+        
         if (buildOptions.UseCors)
         {
             app.UseCors("AllowAll");

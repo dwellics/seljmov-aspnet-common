@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.3.0] - 04 Mar 2025
+- Removed support for NET 6 and NET 8.
+- Added app.UseAntiforgery() after app.UseRouting() in ConfigureMiddlewares method.
+
 ## [1.2.4] - 10 Jul 2024
 - Added RequireAssertion to policies.
 
