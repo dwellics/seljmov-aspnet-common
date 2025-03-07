@@ -49,6 +49,7 @@ public static class SetupHelper
         ConfigureSwagger(builder, buildOptions);
 
         builder.Services.AddControllers();
+        builder.Services.AddAntiforgery();
         builder.Services.AddSingleton<JwtReader>();
 
         var app = builder.Build();
@@ -182,8 +183,6 @@ public static class SetupHelper
         app.UseSwagger();
 
         app.UseRouting();
-
-        app.UseAntiforgery();
         
         if (buildOptions.UseCors)
         {
@@ -195,5 +194,7 @@ public static class SetupHelper
             app.UseAuthentication();
             app.UseAuthorization();
         }
+        
+        app.UseAntiforgery();
     }
 }

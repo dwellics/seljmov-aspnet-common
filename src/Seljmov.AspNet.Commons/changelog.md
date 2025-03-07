@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.3.0 - 1.3.1] - 04 Mar 2025
+## [1.3.0 - 1.3.2] - 04 Mar 2025
 - Removed support for NET 6 and NET 8.
 - Added app.UseAntiforgery() after app.UseRouting() in ConfigureMiddlewares method.
 - Added Microsoft.AspNetCore.OpenApi nuget package.
