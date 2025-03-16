@@ -21,6 +21,12 @@ public class BuildOptions
     public bool UseCors { get; set; }
 
     /// <summary>
+    /// Use Antiforgery.
+    /// </summary>
+    /// <remarks>[Ru] Использовать Antiforgery.</remarks>
+    public bool UseAntiforgery { get; set; } = false;
+    
+    /// <summary>
     /// Authentication policies.
     /// </summary>
     /// <remarks>[Ru] Политики аутентификации.</remarks>
